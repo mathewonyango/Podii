@@ -20,10 +20,13 @@ defmodule Blogger do
     HTTPoison.get! "https://medium.com/podiihq/quick-connect-to-your-amazon-ec2-linux-instance-through-the-command-line-6c682960ef91"
   end
   #Q2
-  def capitalize_array(array) do
-    words = String.split(array, " ")
-    words_capitalized = Enum.map(words, &String.capitalize/1)
-    Enum.join(words_capitalized, " ")
+  def cap(n) do
+    n
+    |> List.to_string
+    |> String.upcase
+    |> String.split_at(3)
+    |> Tuple.to_list
+end
   end
   #Q3
   def q3() do
